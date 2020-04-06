@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "imdb_top", "imdb_top\imdb_top.csproj", "{2EC6E229-7FAA-4FC7-843F-9278FB0572EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EC6E229-7FAA-4FC7-843F-9278FB0572EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC6E229-7FAA-4FC7-843F-9278FB0572EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC6E229-7FAA-4FC7-843F-9278FB0572EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC6E229-7FAA-4FC7-843F-9278FB0572EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4664FEE4-8918-4448-A90C-F58552CEF65E}
+	EndGlobalSection
+EndGlobal

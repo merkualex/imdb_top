@@ -1,0 +1,38 @@
+﻿@model imdb_top.Models.Serial
+
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<section id="projects" class="projects-section bg-black">
+    <div class="container">
+
+    </div>
+</section>
+
+<section id="projects" class="projects-section bg-black">
+    <div class="container">
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+            <div class="col-lg-6">
+                <img class="img-fluid" src="~/Content/img/1234.jpg" alt="">
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h3 class="text-white">@Model.Name</h3>
+                            <h3 class="text-white">IMDB @Model.Imdb</h3>
+                            <h5 class="text-white">Release Date: @Model.Release</h5>
+                            <h5 class="text-white">Genre: @Model.Genre.Name</h5>
+                            <h5 class="text-white">Seasons: @Model.Seasons</h5>
+                            <hr class="d-none d-lg-block mb-0 ml-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+

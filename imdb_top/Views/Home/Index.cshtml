@@ -1,0 +1,108 @@
+﻿@model imdb_top.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">IMDB TOP</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">A list of TOP IMDB films.</h2>
+        </div>
+    </div>
+</header>
+
+<section id="projects" class="projects-section bg-black">
+    <div class="container">
+        <h1 class="text-center text-primary" id="films_title">FILMS</h1>
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <table id="films" class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Genre</th>
+                            <th>Release Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var movie in Model.Movies)
+                        {
+                            <tr>
+                                <td>@Html.ActionLink(movie.Name, "Info", "Movie", new { id = movie.Id }, null)</td>
+                                <td>@movie.Genre.Name</td>
+                                <td>@movie.Release</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h1 class="text-center text-primary" id="series_title">SERIES</h1>
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <table id="series" class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Genre</th>
+                            <th>Seasons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#films').DataTable({
+                "ordering": false,
+                "info": false,
+                "searching": false,
+                "scrollY": '50vh',
+                "scrollCollapse": true,
+                "paging": false
+
+            });
+            $('#series').DataTable({
+                "ordering": false,
+                "info": false,
+                "searching": false,
+                "scrollY": '50vh',
+                "scrollCollapse": true,
+                "paging": false,
+                ajax: {
+                    url: "/api/serial",
+                    dataSrc: ""
+
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, serial) {
+                            return "<a href='/serial/info/" + serial.id + "'>" + serial.name + "</a"
+                        }
+                    },
+                    {
+                        data: "genre.name"
+                    },
+                    {
+                        data: "seasons"
+                    },
+
+                    
+                ]
+            });
+
+        });
+
+    </script>
+}

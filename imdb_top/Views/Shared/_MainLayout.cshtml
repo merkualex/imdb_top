@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Page.Title</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>IMDB TOP</title>
+
+    <link href=@Url.Content("Content/vendor/fontawesome-free/css/all.min.css") rel="stylesheet">
+
+</head>
+<body>
+
+    @Html.Partial("_MainNav")
+
+    @RenderBody()
+
+    
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; IMDB TOP @DateTime.Now.Year
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/lib")
+    @Styles.Render("~/Content/css")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
